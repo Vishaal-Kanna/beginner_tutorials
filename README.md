@@ -1,5 +1,5 @@
 # beginner_tutorials
-ROS2 tutorial for a simple publisher subscriber node
+ROS2 tutorial for a simple publisher subscriber node. Week10 HW is added with service and client. Running nodes using launch file is achieved with parameters.
 
 ## Assumptions
 ```
