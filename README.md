@@ -33,6 +33,26 @@ ros2 run cpp_pubsub talker
 ros2 run cpp_pubsub listener in a new terminal after sourcing
 ```
 
+##Run Server and Client
+```
+colcon build --packages-select cpp_srvcli
+Open a terminal from ros2_ws
+ . install/setup.bash
+ros2 run cpp_srvcli client
+```
+
+To modify the output from publishing the string and use it to add two numbers using the client
+```
+ros2 service call /add_two_ints_v2 example_interfaces/srv/AddTwoInts "{a: 1, b: 2}"
+```
+
+##Launch publisher with a parameter
+```
+ros2 launch cpp_srvcli launch.py Parameter_launch_argument:="Hi there" log_level:="INFO"
+```
+
+
+
 
 
 

@@ -8,20 +8,31 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
+find_package(std_msgs REQUIRED)
 find_package(example_interfaces REQUIRED)
 
-add_executable(server src/add_two_ints_server.cpp)
+#add_executable(server src/add_two_ints_server.cpp)
+#ament_target_dependencies(server
+#  rclcpp example_interfaces)
+
+add_executable(server src/add_two_ints_client.cpp)
 ament_target_dependencies(server
   rclcpp example_interfaces)
+  
+add_executable(client src/publisher_member_function.cpp)
+ament_target_dependencies(client rclcpp std_msgs example_interfaces)
 
-add_executable(client src/add_two_ints_client.cpp)
-ament_target_dependencies(client
-  rclcpp example_interfaces)
+add_executable(talker_parm src/publisher_parameter.cpp)
+ament_target_dependencies(talker_parm rclcpp std_msgs)
 
 install(TARGETS
   server
   client
+  talker_parm
   DESTINATION lib/${PROJECT_NAME})
+  
+install(DIRECTORY launch
+  DESTINATION share/${PROJECT_NAME})
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
