@@ -12,6 +12,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+/**
+ * @file Detection_module.hpp
+ * @authors Vishaal Kanna Sivakumar
+ * @brief Publisher class with a paramter from launch
+ * @version 1.0
+ * @date 10/07/2022
+ *
+ * @copyright Copyright (c) 2022
+ *
+ */
+
 #include <chrono>
 #include <functional>
 #include <memory>
@@ -27,6 +38,12 @@ using std::placeholders::_1;
 
 /* This example creates a subclass of Node and uses std::bind() to register a
  * member function as a callback from the timer. */
+ 
+/**
+ * @brief Class for publishing a string based on launch parameter
+ * @param class_data
+ *
+ */
 
 class MinimalPublisher : public rclcpp::Node {
  public:

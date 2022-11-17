@@ -12,6 +12,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+/**
+ * @file Detection_module.hpp
+ * @authors Vishaal Kanna Sivakumar
+ * @brief Publisher class
+ * @version 1.0
+ * @date 10/07/2022
+ *
+ * @copyright Copyright (c) 2022
+ *
+ */
+
 #include <example_interfaces/srv/add_two_ints.hpp>
 #include <rclcpp/logging.hpp>
 #include <rclcpp/rclcpp.hpp>
@@ -32,6 +43,12 @@ using ADDTWOINTS = example_interfaces::srv::AddTwoInts;
 using REQUEST =
     const std::shared_ptr<example_interfaces::srv::AddTwoInts::Request>;
 using RESPOSE = std::shared_ptr<example_interfaces::srv::AddTwoInts::Response>;
+
+/**
+ * @brief Class for publishing a string
+ * @param class_data
+ *
+ */
 
 class MinimalPublisher : public rclcpp::Node {
  public:
