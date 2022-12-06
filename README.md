@@ -58,6 +58,14 @@ ros2 launch cpp_srvcli launch.py Parameter_launch_argument:="Hi there" log_level
 ros2 run rqt_console rqt_console
 ```
 
+## Use static_turtle_tf2_broadcaster for talk to world
+```
+colcon build --packages-select learning_tf2_cpp
+ros2 run learning_tf2_cpp static_turtle_tf2_broadcaster talk 0 0 1 0 0 0
+```
+ros2 run tf2_ros tf2_echo talk world
+ros2 run tf2_tools view_frames
+
 
 
 
