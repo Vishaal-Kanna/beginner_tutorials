@@ -39,7 +39,7 @@ ros2 run cpp_pubsub listener in a new terminal after sourcing
 ```
 colcon build --packages-select cpp_srvcli
 Open a terminal from ros2_ws
- . install/setup.bash
+. install/setup.bash
 ros2 run cpp_srvcli client
 ```
 
@@ -61,12 +61,23 @@ ros2 run rqt_console rqt_console
 ## Use static_turtle_tf2_broadcaster for talk to world
 ```
 colcon build --packages-select learning_tf2_cpp
+. install/setup.bash
 ros2 run learning_tf2_cpp static_turtle_tf2_broadcaster talk 0 0 1 0 0 0
-```
 ros2 run tf2_ros tf2_echo talk world
 ros2 run tf2_tools view_frames
+```
 
+## To launch rosbag record
+```
+ros2 launch learning_tf2_cpp rosbag.xml bag_record:=1
+cd <your_path_to_repo>/learning_tf2_cpp/Rosbag
+ros2 bag info all_topics
+```
 
+## To run test on publisher
+```
+colcon test --event-handlers console_direct+ --packages-select learning_tf2_cpp
+```
 
 
 
