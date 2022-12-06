@@ -72,6 +72,7 @@ ros2 run tf2_tools view_frames
 ros2 launch learning_tf2_cpp rosbag.xml bag_record:=1
 cd <your_path_to_repo>/learning_tf2_cpp/Rosbag
 ros2 bag info all_topics
+ros2 bag play all_topics
 ```
 
 ## To run test on publisher
